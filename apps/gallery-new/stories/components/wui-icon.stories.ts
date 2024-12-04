@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/web-components'
-import '@reown/appkit-ui/src/components/wui-icon'
-import type { WuiIcon } from '@reown/appkit-ui/src/components/wui-icon'
+import '@reown/appkit-ui-new/src/components/wui-icon'
+import type { WuiIcon } from '@reown/appkit-ui-new/src/components/wui-icon'
 import { html } from 'lit'
 import { colorOptions, iconOptions } from '../../utils/PresetUtils'
 
@@ -30,6 +30,5 @@ export default {
 } as Component
 
 export const Default: Component = {
-  render: args =>
-    html`<wui-icon size=${args.size} color=${args.color} name=${args.name}></wui-icon>`
+  render: args => html`<wui-icon size=${args.size} name=${args.name}></wui-icon>`
 }

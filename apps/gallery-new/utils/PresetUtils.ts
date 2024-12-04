@@ -6,7 +6,7 @@ import type {
   CardSelectType,
   ChipButtonVariant,
   ChipType,
-  ColorType,
+  TextColorType,
   FlexAlignItemsType,
   FlexBasisType,
   FlexDirectionType,
@@ -20,46 +20,65 @@ import type {
   IconType,
   LogoType,
   PlacementType,
+  ButtonShortcutVariant,
   SpacingType,
-  TagType,
+  TagVariant,
   TextAlign,
   TextType,
   ThemeType,
   TransactionType,
-  VisualType
-} from '@reown/appkit-ui/src/utils/TypeUtil'
+  VisualType,
+  ButtonLinkVariant,
+  DomainChipVariant,
+  ToastMessageVariant
+} from '@reown/appkit-ui-new/src/utils/TypeUtil'
 import type { TransactionStatus, TransactionDirection } from '@reown/appkit-common'
 
-export const colorOptions: ColorType[] = [
-  'accent-100',
-  'error-100',
-  'fg-100',
-  'fg-150',
-  'fg-200',
-  'fg-300',
-  'inherit',
-  'inverse-000',
-  'inverse-100',
-  'success-100'
+export const textColorOptions: TextColorType[] = [
+  'primary',
+  'secondary',
+  'tertiary',
+  'invert',
+  'error',
+  'warning',
+  'accent-primary'
 ]
 
+export const iconColorOptions = ['accent', 'inverse']
+
+// @TODO: Deprecate this
+export const colorOptions = iconColorOptions
+
+export const backgroundColorOptions = ['foregroundSecondary', 'foregroundAccent010']
+
 export const textOptions: TextType[] = [
-  'micro-700',
-  'micro-600',
-  'mini-700',
-  'tiny-500',
-  'tiny-600',
-  'small-500',
-  'small-600',
-  'medium-400',
-  'paragraph-400',
-  'paragraph-500',
-  'paragraph-600',
-  'paragraph-700',
-  'large-500',
-  'large-600',
-  'large-700',
-  '2xl-500'
+  'h1-regular-mono',
+  'h1-regular',
+  'h1-medium',
+  'h2-regular-mono',
+  'h2-regular',
+  'h2-medium',
+  'h3-regular-mono',
+  'h3-regular',
+  'h3-medium',
+  'h4-regular-mono',
+  'h4-regular',
+  'h4-medium',
+  'h5-regular-mono',
+  'h5-regular',
+  'h5-medium',
+  'h6-regular-mono',
+  'h6-regular',
+  'h6-medium',
+  'lg-regular-mono',
+  'lg-regular',
+  'lg-medium',
+  'md-regular-mono',
+  'md-regular',
+  'md-medium',
+  'sm-regular-mono',
+  'sm-regular',
+  'sm-medium'
 ]
 
 export const textAlignOptions: TextAlign[] = ['center', 'left', 'right']
@@ -113,6 +132,10 @@ export const gridContentOptions: GridContentType[] = [
 ]
 
 export const walletImagesOptions = [
+  {
+    src: 'https://explorer-api.walletconnect.org/v3/logo/md/018b2d52-10e9-4158-1fde-a5d5bac5aa00?projectId=c1781fc385454899a2b1385a2b83df3b',
+    walletName: 'MetaMask'
+  },
   {
     src: 'https://explorer-api.walletconnect.com/w3m/v1/getWalletImage/7a33d7f1-3d12-4b5c-f3ee-5cd83cb1b500?projectId=c1781fc385454899a2b1385a2b83df3b',
     walletName: 'Rainbow'
@@ -172,6 +195,8 @@ export const spacingOptions: SpacingType[] = [
   '3xl'
 ]
 
+export const toastMessageOptions: ToastMessageVariant[] = ['info', 'success', 'warning', 'error']
+
 export const iconOptions: IconType[] = [
   'allWallets',
   'apple',
@@ -181,6 +206,7 @@ export const iconOptions: IconType[] = [
   'arrowTop',
   'browser',
   'checkmark',
+  'checkmarkVerified',
   'chevronBottom',
   'chevronLeft',
   'chevronRight',
@@ -191,7 +217,6 @@ export const iconOptions: IconType[] = [
   'compass',
   'copy',
   'cursor',
-  'cursorTransparent',
   'desktop',
   'disconnect',
   'discord',
@@ -259,7 +284,9 @@ export const logoOptions: LogoType[] = [
 
 export const placementOptions: PlacementType[] = ['top', 'right', 'bottom', 'left']
 
-export const chipButtonVariants: ChipButtonVariant[] = ['main', 'accent', 'shade', 'gray', 'shade']
+export const chipButtonVariants: ChipButtonVariant[] = ['main', 'accent', 'primary']
+
+export const domainChipVariants: DomainChipVariant[] = ['success', 'warning', 'error']
 
 export const chipVariants: ChipType[] = [
   'fill',
@@ -271,13 +298,17 @@ export const chipVariants: ChipType[] = [
 ]
 
 export const buttonOptions: ButtonVariant[] = [
-  'main',
-  'accent',
-  'accent',
-  'accent-error',
-  'accent-success',
-  'neutral'
+  'accent-primary',
+  'accent-secondary',
+  'neutral-primary',
+  'neutral-secondary',
+  'error-primary',
+  'error-secondary'
 ]
+
+export const buttonShortcutOptions: ButtonShortcutVariant[] = ['accent', 'secondary']
+
+export const buttonLinkOptions: ButtonLinkVariant[] = ['accent', 'secondary']
 
 export const transactionTypeOptions: TransactionType[] = [
   'approve',
@@ -307,7 +338,14 @@ export const cardSelectOptions: CardSelectType[] = ['network', 'wallet']
 
 export const backgroundOptions: BackgroundType[] = ['opaque', 'transparent']
 
-export const tagOptions: TagType[] = ['main', 'shade', 'error', 'success']
+export const tagOptions: TagVariant[] = [
+  'accent',
+  'info',
+  'success',
+  'warning',
+  'error',
+  'certified'
+]
 
 export const accountEntryOptions: AccountEntryType[] = ['icon', 'image']
 
@@ -317,8 +355,6 @@ export const iconBoxBorderOptions: IconBoxBorderType[] = [
   'wui-color-bg-125',
   'wui-accent-glass-010'
 ]
-
-export const tagLabelOptions = ['get wallet', 'installed', 'qr code', 'recent']
 
 export const signTypedData = {
   domain: {

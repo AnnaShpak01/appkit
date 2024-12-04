@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/web-components'
-import '@reown/appkit-ui/src/composites/wui-tooltip'
-import type { WuiTooltip } from '@reown/appkit-ui/src/composites/wui-tooltip'
+import '@reown/appkit-ui-new/src/composites/wui-tooltip'
+import type { WuiTooltip } from '@reown/appkit-ui-new/src/composites/wui-tooltip'
 import { html } from 'lit'
 
 import { placementOptions } from '../../utils/PresetUtils'
@@ -12,12 +12,16 @@ export default {
   args: {
     message: 'Tooltip',
     placement: 'top',
+    size: 'md',
     variant: 'fill'
   },
-
   argTypes: {
     placement: {
       options: placementOptions,
+      control: { type: 'select' }
+    },
+    size: {
+      options: ['sm', 'md'],
       control: { type: 'select' }
     },
     variant: {
@@ -33,5 +37,6 @@ export const Default: Component = {
       variant=${args.variant}
       placement=${args.placement}
       message=${args.message}
+      size=${args.size}
     ></wui-tooltip>`
 }
